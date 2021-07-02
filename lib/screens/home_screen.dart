@@ -1,9 +1,11 @@
 import 'package:e_jex/screens/order_process_screen.dart';
+import 'package:e_jex/screens/send_screen.dart/send_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../const.dart';
+import 'bike_screen/bike_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -88,11 +90,17 @@ class HomeScreen extends StatelessWidget {
               HStack(
                 [
                   _menuSelectionButton(
-                      asset: "assets/scooter 1.png", title: "Bike"),
+                          asset: "assets/scooter 1.png", title: "Bike")
+                      .onTap(() {
+                    Get.to(() => BikeScreen());
+                  }),
                   _menuSelectionButton(
                       asset: "assets/vehicle 1.png", title: "Car"),
                   _menuSelectionButton(
-                      asset: "assets/truck 1.png", title: "Send"),
+                          asset: "assets/truck 1.png", title: "Send")
+                      .onTap(() {
+                    Get.to(() => SendScreen());
+                  }),
                   _menuSelectionButton(
                       asset: "assets/Food Cart.png", title: "Food"),
                 ],
